@@ -7,7 +7,8 @@ export default function SearchBar({onSubmit}) {
 
   const handleClick = (event) => {
     event.preventDefault()
-    onSubmit(term)
+    onSubmit(term);
+    setTerm("");
   }
   const handleChange = (event) => {
     setTerm(event.target.value) 
@@ -16,7 +17,7 @@ export default function SearchBar({onSubmit}) {
     <div className='search-bar'>
       <form onSubmit={handleClick}>
         <label>Enter Search Term</label>
-        <input type="text" onChange={handleChange} placeholder="Search "/>
+        <input type="text" value={term} onChange={handleChange} placeholder="Search "/>
       </form>
     </div>
   )
